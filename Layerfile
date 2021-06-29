@@ -23,7 +23,8 @@ ENV PATH=$HOME/.rbenv/versions/2.7.1/bin:$PATH
 RUN echo Using ruby version: `ruby -v`
 
 # This line copies the repository to /root in the runner
-COPY . .
+COPY . /app
+WORKDIR /app
 RUN ls
 
 # Install bundler and let bundler install dependencies
